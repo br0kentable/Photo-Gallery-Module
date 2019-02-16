@@ -1,0 +1,19 @@
+// Acidity is a key element in a wine's longevity. The proper way to hold a wineglass is to position it so that the wine goes into your mouth. Serve dry Semillon with clams, mussels, or pasta salad. Winemakers refer to screw caps as Stelvin enclosures, because it sounds better than "lid." An inimitable flavor is found in barrels. So many organic compounds are in wine. 
+
+// Beaujolais, from the region that is its namesake, is made from Gamay grapes. Monks and monasteries of the Roman Catholic Church have had an important influence on the history of Burgundy wine. Women have a higher fat content than men. What does this have to do with wine? Because fat doesn't absorb alcohol, women get drunk faster. Vatican City is the smallest country in the world, but it consumes the most wine per capita worldwide. Pinot Grigio and Pinot Gris are two names for the same wine. The host of a dinner should take the first sip of wine to assure his guests it is not poisoned. Wines that are named for a region are always capitalized – Bordeaux, Burgundy, Champagne, Rioja, Chianti, Lambrusco, etc. 
+
+// A mommy needs more wine than adolescents. The world's oldest person – at one hundred twenty-two – attributed her longevity to a diet of olive oil, port wine and chocolate. Some wines are made from rotting grapes: Botrytis, or noble rot, makes good dessert wine. In cooler climates, cabernet sauvignon tends to produce wines with blackcurrant notes that can be accompanied by green bell pepper notes, mint and cedar which will all become more pronounced as the wine ages. Thunderbird is a screw-top classic. 
+
+// When Cabernet Sauvignon is paired with steak or dishes with a heavy butter cream sauce, the tannins are neutralized, allowing the fruits of the wine to be more noticeable. The term meritage is a blend of merit and heritage, and usually describes blended California wines. 
+
+// Sommelier is an elegant euphemism for professional wino. Chenin blanc boasts a bouquet of fresh pears, saffron, jasmine, ginger, and quince. 
+
+// Some whites age better in stainless steel. Trichloroanisole, or stinky cork, is produced when chlorine used in sanitization comes into contact with natural cork-dwelling bacteria. Hint: Sangiovese is a four syllable word. Maybe more if you're drunk. 
+
+// Roll the wine around your mouth with your tongue and note the different flavors. Balance requires neither too much, nor too little, acidity. 
+
+// Red wines usually trump whites in alcohol content. The world's oldest bottle of wine is over 1600 years old and can be found at a museum in Germany. The classic profile of Cabernet Sauvignon tends to be full-bodied with high tannins and noticeable acidity that contributes to the wine's aging potential. Shiraz, Syrah, what's the difference? There is none. Chinon is a town in France renowned for its winemaking. 
+
+// Pursing your lips and inhaling some air while the wine is still on your palate is also a nice way to spread the more complex flavors through your sinuses. The aftertaste, or "finish," is the primary factor in judging the quality and character of wine. Grand Cru wines are produced from the small number of the best vineyard sites in the Côte d'Or. More? Sparkling reds include Lambrusco, from Italy, and Brachetto D'Acqui. 
+
+// Sulfites are found in nearly all wines, produced by the yeast during fermentation. The Romans cooked grape juice in lead pots to sweeten their wine... and to poison their wine. Alsace, in Eastern France, is highly regarded as a winemaking region. The level of perceived sharpness is referred to as acidity by sommeliers, or "tartness" by drunks. Bouquet refers to wine's aroma. 
