@@ -1,17 +1,24 @@
 const mongoose = require('mongoose');
 const db = require('./index');
 
-var Schema = mongoose.Schema;
 
-var menuSchema = new Schema({
-  restaurant: { type: Schema.Types.ObjectId, ref: 'Restaurant' },
-  fullMenu: [ { menuType: String, 
-                  items: [{ dishName: String,
-                           description: String,
-                           price: Number }] ,
-  }]
+var menuSchema = mongoose.Schema({
+  menuId: Schema.Types.ObjectId,
+  menuTitle: { 
+    type: String, require: true
+  },
+  menuText: {
+    type: Array
+  },
+  priceAvg: {
+    type: Number
+  } 
 });
+
 
 const Menu = mongoose.model('Menu', menuSchema);
 
-module.exports = Menu;
+module.exports = {
+  Menu,
+  menuSchema
+};

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export default axios.create({
+
+axios.get({
   baseURL: 'https://api.unsplash.com',
   headers: {
     'Accept-Version': 'v1',
@@ -31,7 +32,6 @@ export default axios.create({
 // "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=8aae34cf35df31a592f0bef16e6342ef"
 // };
 
-"https://images.unsplash.com/photo-1525159831892-59d292d558b4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjU0Njg1fQ"
 
 
 

@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const menuData = require('../seed/menuSeeder');
+
 
 const app = express();
 const PORT = 3001;
@@ -14,7 +16,7 @@ app.use(bodyParser.json());
 app.get('/menus', (req, res) => {
   console.log('I am in the get', req.body);
   //query the data base for the dog by id
-  res.send(`<div>[{menu: placeholder}]</div>`)
+  res.send(menuData);
 });
 
 
