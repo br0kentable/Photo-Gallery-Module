@@ -1,12 +1,17 @@
 const mongoose = require('mongoose');
 const db = require('./index');
+
 var Schema = mongoose.Schema;
 
 const photoGallerySchema = mongoose.Schema({
-  _id: Schema.Types.ObjectId,
-  restaurantName: String,
+  id: String,
+  restaurantName: String, 
+  collectionId: Number,
+  photosCount: Number,
+  heroImage: String,
+  
   photos: {
-    type: [ photoSchema ], default: undefined
+    urls: [ photoSchema ], default: undefined
   }
 });
 
@@ -16,11 +21,11 @@ const photoSchema = mongoose.Schema({
   _id: Schema.Types.ObjectId,
   urls: {
     type: [ { 
-      raw: String,
-      full: String,
-      regular: String,
-      small: String,
-      thumb: String
+      heroImage: String,
+      galleryLeft: String,
+      galleryCenter: String,
+      galleryRight: String,
+      galleryScroller: String
     } ]
   }
 });

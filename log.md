@@ -12,3 +12,17 @@ if i can seed data with just photos concerned
 
 
 resizer.otstatic.com
+
+Mongoose.prototype.mongo
+Type:
+«property»
+The node-mongodb-native driver Mongoose uses.
+
+Mongoose.prototype.modelNames()
+Returns:
+«Array»
+Returns an array of model names created on this instance of Mongoose.
+
+Note:
+Does not include names of models created using connection.model().
+
