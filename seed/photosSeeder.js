@@ -1,4 +1,4 @@
-const db = require('../database/index');
+
 const PhotoGallery = require('../database/photosModel').PhotoGallery;
 const restaurantIds = require('../restaurant_ID.json');
 
@@ -85,5 +85,6 @@ seedPhotos(restaurantIds);
 //   4308781, 940094, 622239, 2268099, 624547, 1649875, 2535685, 2324404, 1474556, 3750174,
 //   3474290, 3658043, 1772904, 2142429, 2142429, 1450905, 2164884, 4253528, 837392, 3098347
 // ];
+
 
 
