@@ -1,74 +1,72 @@
 const db = require('../database/index');
 const PhotoGallery = require('../database/photosModel').PhotoGallery;
+const restaurantIds = require('../restaurant_ID.json');
 
-var seedPhotos = function(count) {
-  while(count < 55) {
-    count += 1;
-    const restaurantPhotos = new PhotoGallery({
-      id: count,
-      restaurantName: 'Eat the Rich',
-      collectionId: 4239193,
-      photosTotal: 55,
-      heroImage: `https://source.unsplash.com/collection/4239193/1450x260/?sig=${5}`,
-      scrollerImage: `https://source.unsplash.com/collection/4239193/400x400/?sig=${6}`,
-      galleryLeft: `https://source.unsplash.com/collection/4239193}/145x145/?sig=${7}`,
-      galleryCenter: `https://source.unsplash.com/collection/4239193/290x290/?sig=${8}`,
-      galleryRight: `https://source.unsplash.com/collection/4239193/98x98/?sig=${9}`,
-      photos: [ `https://source.unsplash.com/collection/4239193/400x400/?sig=${1}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${2}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${3}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${4}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`,
-                `https://source.unsplash.com/collection/4239193/400x400/?sig=${count}`
-              ]
-          }).save().then(result => {
-            console.log(result);
-          }).catch(err => {
-            console.log(err);
-          });
-  }  
+/*create a PhotoGallery model instance for each id in the restaurantIds array
+
+  * for the moment each url from unsplash will be grabbing a random photo from a collection I created 
+  on the unsplash api
+  * eventually will need to change set up to persist same photos per restaurant_id
+
+  *the collection on unsplash has a total of 55 photos
+
+  *the function below generates a random number less than 55 which will represent the total number of 
+  photos a restaurant will show on the component for a specific restaurant 
+  
+  *for now the number will also represent the number of unsplash url strings will be stored in the photos array field
+  for each model instance
+*/
+
+// this function generates a random amount of photos per restaurant
+var generateRandomPhotoCount = function(min, max) {
+  return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
-seedPhotos(0);
+
+
+ //this function takes in a number and returns an array populated with the given number of unsplash urls 
+var createPhotoCollection = function(totalPhotos, urlString) {
+  var output = [];
+  while(totalPhotos > 0) {
+    output.push(urlString);
+    totalPhotos -= 1;
+  }
+  return output;
+}
+
+
+// ** insert a PhotoGallery for each restaurantId into the database
+
+var seedPhotos = function(restaurantIds) {
+  for(var i = 0; i < restaurantIds.length; i++) {
+    new PhotoGallery({
+      id: restaurantIds[i].ID,
+      restaurantName: restaurantIds[i].name,
+      heroImage: `https://source.unsplash.com/collection/4239193/1450x260/`,
+      scrollerImage: `https://source.unsplash.com/collection/4239193/400x400/`,
+      galleryLeft: `https://source.unsplash.com/collection/4239193/145x145/`,
+      galleryCenter: `https://source.unsplash.com/collection/4239193/290x290/`,
+      galleryRight: `https://source.unsplash.com/collection/4239193/98x98/`,
+      photos: createPhotoCollection(generateRandomPhotoCount(1, 55), `https://source.unsplash.com/collection/4239193/400x400/`)
+    }).save().then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+}  
+
+
+// console.log(createPhotoCollection(generateRandomPhotoCount(1, 55), `https://source.unsplash.com/collection/4239193/400x400/`));
+
+  
+
+
+
+
+
+
+seedPhotos(restaurantIds);
 
 
 // `https://source.unsplash.com/collection/4239193/${heroImageWidth}x${heroImageHeight}/sig=${5}`
