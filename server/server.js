@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const menuData = require('../seed/menuSeeder');
-const photosData = require('../seed/photosSeeder');
+// const menuData = require('../seed/menuSeeder');
+// const photosData = require('../seed/photosSeeder');
 const PhotoGallery = require('../database/photosModel');
 
 const app = express();
