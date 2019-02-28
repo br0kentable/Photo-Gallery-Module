@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { getPhotosForRestaurantId } = require('../database/photosModel');
+const { getPhotosForRestaurant } = require('../controller/utility');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -12,16 +12,15 @@ app.use(bodyParser.json())
 app.get('/api/restaurants/:id', (req, res) => {
   const id = req.params.id;
   console.log('I am in the get', req.params);
-  // getPhotosForRestaurantId(id).then(photos => {
-  //   console.log(photos);
-  //   res.status(200).send(JSON.stringify(photos));
-  // }).catch(err => {
-  //   console.log(err);
-  // }) 
-  getPhotosForRestaurantId(id)
+  getPhotosForRestaurant(id, (err, photos) => {
+    if(err) {
+      throw err
+    }
+    res.status(200).send(JSON.stringify(photos));
+  });
 });
 
-// app.get('/api/restaurant/:id/photos', (req, res) => {
+// app.get('/api/restaurants/:id/photos', (req, res) => {
 //   const id = req.params.restaurantId;
 //   console.log('in the get photos', id);
  
