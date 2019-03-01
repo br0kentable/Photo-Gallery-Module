@@ -5,17 +5,9 @@ export default class ThumbnailGalllery extends Component {
   render() {
     console.log('inside the ThumbnailGallery component:', this.props)
     const left = this.props.galleryWindow.slice(0, 2);
-    left.map((image, index) => {
-      return <img key={index} image={image} />
-    })
     const center = this.props.galleryWindow[2];
     const right = this.props.galleryWindow.slice(4);
-    right.map((image, index) => {
-      return <img key={index} image={image} />
-    })
-    console.log('inside render', left, center, right);
-
-
+    
     return (
       <div className="photos-gallery-container">
         <h2 style={galleryHeaderStyles}> {this.props.photos} Photos</h2>
@@ -23,23 +15,21 @@ export default class ThumbnailGalllery extends Component {
         <div className="photos-gallery-layout container" style={galleryContainerStyles}>
           {/* possibly below layout will be <ul> then <t> <a role="button"> <div> <img>*/}
           <div className="photos-gallery-left-grid-container" style={galleryLeftGridStyles}>
-            left
-            {/* <img src={this.props.galleryWindow[0]} />
-            <img src={this.props.galleryWindow[1]} /> */}
+            {left.map((image, index) => {
+              return <img key={index} src={image} />
+            })}
           </div>
           <div className="photo-gallery-center-grid-container" style={galleryCenterGridStyles}>
-            center
-            {/* <img src={center} /> */}
-            {/* <img src={this.props.galleryWindow[2]} /> */}
+            {/* center */}
+            <img src={center} />
+            
           </div>
           <div className="photo-gallery-right-grid-container" style={galleryRightGridStyles}>
-            right
-            {/* <img src={this.props.galleryWindow[3]} />
-            <img src={this.props.galleryWindow[4]} />
-            <img src={this.props.galleryWindow[5]} />
-            <img src={this.props.galleryWindow[6]} />
-            <img src={this.props.galleryWindow[7]} />
-            <img src={this.props.galleryWindow[8]} /> */}
+            {/* right */}
+            {right.map((image, index) => {
+              return <img key={index} src={image} />
+            })}
+
           </div>
         </div>
       </div>
@@ -60,7 +50,8 @@ const galleryContainerStyles = {
 }
 
 const galleryLeftGridStyles = {
-  flex: 1
+  display: 'grid',
+
 }
 
 const galleryCenterGridStyles = {
