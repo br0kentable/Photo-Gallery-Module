@@ -2,26 +2,26 @@ import React from 'react';
 import $ from 'jquery';
 import HeroBanner from './Hero.js';
 import ThumbnailGallery from './ThumbnailGallery.js';
-// import PhotoGalleryScroller from './PhotoGalleryScroller.js';
+// import PhotoGalleryScroller from './PhotoScroller.js';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hero: `https://source.unsplash.com/collection/4239193/1450x280/?sig=${5}`,
+      hero: null,
       galleryWindow: [
-        `https://source.unsplash.com/collection/4239193/145x145/?sig=${1}`,
-        `https://source.unsplash.com/collection/4239193/145x145/?sig=${2}`,
-        `https://source.unsplash.com/collection/4239193/290x290/?sig=${3}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${4}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${5}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${6}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${7}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${8}`,
-        `https://source.unsplash.com/collection/4239193/98x98/?sig=${9}`
+        // `https://source.unsplash.com/collection/4239193/145x145/?sig=${1}`,
+        // `https://source.unsplash.com/collection/4239193/145x145/?sig=${2}`,
+        // `https://source.unsplash.com/collection/4239193/290x290/?sig=${3}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${4}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${5}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${6}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${7}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${8}`,
+        // `https://source.unsplash.com/collection/4239193/98x98/?sig=${9}`
       ],
-
+      scrollerPhotos: []
     }
     console.log('inside the App constructor', this.state);
   }
@@ -35,34 +35,47 @@ class App extends React.Component {
       $.get(`/api/restaurants/${pathname}`, 
         function(result) {
           let imageUrls = JSON.parse(result);
-          console.log('inside the getPhotos', imageUrls);
-          // app.setState({
-          //   hero: result.heroImage
-          // })
+          console.log('inside the componentWillM', imageUrls);
+          app.setState({
+            hero: imageUrls[0].heroImage,
+            galleryWindow: [
+              imageUrls[0].galleryLeft,
+              imageUrls[0].galleryLeft,
+              imageUrls[0].galleryCenter,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight,
+              imageUrls[0].galleryRight
+            ],
+            scrollerPhotos: imageUrls[0].photos
+          })
         });
     }
 
-    getPhotos() {
-      let app = this;
-      $.get('/api/restaurants/:id', 
-        function(result) {
-          console.log('inside the getPhotos', result);
-          let imageUrls = JSON.parse(result);
-        })
-        app.setState({
-          hero: result.heroImage
-        });
-    }
+    // getPhotos() {
+    //   let app = this;
+    //   $.get('/api/restaurants/:id', 
+    //     function(result) {
+    //       console.log('inside the getPhotos', result);
+    //       let imageUrls = JSON.parse(result);
+    //     })
+    //     app.setState({
+    //       hero: result.heroImage
+    //     });
+    // }
   
         //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
       //if not render null
     render() {
-      console.log('inside the render', this.state.hero);
+      console.log('inside the render', this.state);
       return (
         <div>
           <HeroBanner heroImage={this.state.hero}/>
 
-          <ThumbnailGallery galleryWindow={this.state.galleryWindow} />
+          <ThumbnailGallery galleryWindow={this.state.galleryWindow} photos={this.state.scrollerPhotos.length}/>
         </div>
       )
     }

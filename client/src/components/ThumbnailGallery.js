@@ -1,49 +1,88 @@
 import React, { Component } from 'react';
 
+
 export default class ThumbnailGalllery extends Component {
   render() {
-    console.log('inside the ThumbnailGallery component:', this.props.galleryWindow)
+    console.log('inside the ThumbnailGallery component:', this.props)
+    const left = this.props.galleryWindow.slice(0, 2);
+    left.map((image, index) => {
+      return <img key={index} image={image} />
+    })
+    const center = this.props.galleryWindow[2];
+    const right = this.props.galleryWindow.slice(4);
+    right.map((image, index) => {
+      return <img key={index} image={image} />
+    })
+    console.log('inside render', left, center, right);
+
+
     return (
-      <div className="photo-gallery-container" style={GalleryContainerStyles}>
-        <h2>?? Photos</h2>
-
-        {/* <div className="photo-gallery-left-container">
-          <img src={this.props.galleryWindow[0]} />
-          <img src={this.props.galleryWindow[1]} />
+      <div className="photos-gallery-container">
+        <h2 style={galleryHeaderStyles}> {this.props.photos} Photos</h2>
+        
+        <div className="photos-gallery-layout container" style={galleryContainerStyles}>
+          {/* possibly below layout will be <ul> then <t> <a role="button"> <div> <img>*/}
+          <div className="photos-gallery-left-grid-container" style={galleryLeftGridStyles}>
+            left
+            {/* <img src={this.props.galleryWindow[0]} />
+            <img src={this.props.galleryWindow[1]} /> */}
+          </div>
+          <div className="photo-gallery-center-grid-container" style={galleryCenterGridStyles}>
+            center
+            {/* <img src={center} /> */}
+            {/* <img src={this.props.galleryWindow[2]} /> */}
+          </div>
+          <div className="photo-gallery-right-grid-container" style={galleryRightGridStyles}>
+            right
+            {/* <img src={this.props.galleryWindow[3]} />
+            <img src={this.props.galleryWindow[4]} />
+            <img src={this.props.galleryWindow[5]} />
+            <img src={this.props.galleryWindow[6]} />
+            <img src={this.props.galleryWindow[7]} />
+            <img src={this.props.galleryWindow[8]} /> */}
+          </div>
         </div>
-        <div className="photo-gallery-center-container">
-          <img src={this.props.galleryWindow[2]} />
-        </div>
-
-        <div className="photo-gallery-right-container">
-          <img src={this.props.galleryWindow[3]} />
-          <img src={this.props.galleryWindow[4]} />
-          <img src={this.props.galleryWindow[5]} />
-          <img src={this.props.galleryWindow[6]} />
-          <img src={this.props.galleryWindow[7]} />
-          <img src={this.props.galleryWindow[8]} />
-        </div> */}
       </div>
     )
   }
 }
 
-const GalleryContainerStyles = {
-  background: 'grey',
+// const galleryContainerStyles = {
+//   height:'350px',
+//   width: '690px',
+//   display: 'grid'
+// }
+
+const galleryContainerStyles = {
   height:'350px',
   width: '690px',
-  margin: '40px auto',
-  display: 'grid'
+  display: 'flex'
 }
 
-const galleryWindowLeftStyles = {
-
+const galleryLeftGridStyles = {
+  flex: 1
 }
 
-const galleryWindowCenterStyles = {
-
+const galleryCenterGridStyles = {
+  flex: 1
 }
 
-const galleryWindowRightStyles = {
+const galleryRightGridStyles = {
+  flex: 1
+}
 
+const galleryHeaderStyles = {
+  height: '42px',
+  width: '608px',
+  marginBlockStart: '0.83em',
+  marginBlockEnd: '0.83em',
+  fontSize: '24px',
+  fontWeight: '700',
+  lineHeight: '32px',
+  color: '#2d333f',
+  borderBottom: '1px solid #d8d9db',
+  paddingBottom: '16px',
+  margin: '0 0 5px 0',
+  display: 'flex',
+  justifyContent: 'space-between'
 }
