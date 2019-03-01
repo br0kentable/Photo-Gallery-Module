@@ -18,7 +18,7 @@ var updatePhotoCollectionForRestaurant = function(id, callback) {
 
 }
 
-var deletePhotosForRestaurant = function(id, callback) {
+var deletePhotoForRestaurant = function(id, callback) {
   
 }
 

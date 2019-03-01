@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const heroImageStyles = {
   backgroundImage: "url(https://source.unsplash.com/collection/4239193/1450x280/?sig=${5})",
@@ -8,7 +8,7 @@ const heroImageStyles = {
   backgroundPosition: "center"
 }
 
-export default HeroBanner = (props) => {
+export default (props) => {
   console.log('inside the HeroBanner comp', props.heroImage)
   return (
     <div>

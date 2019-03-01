@@ -16,25 +16,6 @@ const photoGallerySchema = Schema({
 
 var PhotoGallery = mongoose.model('PhotoGallery', photoGallerySchema);
 
-var getPhotosForRestaurantId = function(id, callback) {
-  PhotoGallery.find({ id: id}).then(photos => {
-    console.log('results: ', photos)
-    callback(null, photos);
-  }).catch(err => {
-    console.log('err in getPhotosForRestId', err);
-    callback(err);
-  })
-}
-
-var updatePhotosForRestaurant = function(id, callback) {
-
-}
-
-var deletePhotosForRestaurant = function(id, callback) {
-
-}
-
-
 
 module.exports = {
   PhotoGallery,
