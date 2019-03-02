@@ -16,7 +16,7 @@ export default class ThumbnailGalllery extends Component {
           {/* possibly below layout will be <ul> then <t> <a role="button"> <div> <img>*/}
           <div className="photos-gallery-left-grid-container" style={galleryLeftGridStyles}>
             {left.map((image, index) => {
-              return <img key={index} src={image} />
+              return <img key={index} src={image + `?sig=${index + 1}`} />
             })}
           </div>
           <div className="photo-gallery-center-grid-container" style={galleryCenterGridStyles}>
@@ -27,7 +27,7 @@ export default class ThumbnailGalllery extends Component {
           <div className="photo-gallery-right-grid-container" style={galleryRightGridStyles}>
             {/* right */}
             {right.map((image, index) => {
-              return <img key={index} src={image} />
+              return <img key={index} src={image + `?sig=${index}`}  />
             })}
 
           </div>
