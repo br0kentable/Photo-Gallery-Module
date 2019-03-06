@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import PhotoGallery from './PhotoGallery.js';
 import PhotoSlider from './PhotoSlider.js';
-import ModalSlider from './Modal.js';
+import Modal from './Modal.js';
 import Slide from './Slide.js';
 import Icon from './'
 
@@ -17,6 +17,7 @@ class App extends React.Component {
       showModal: false
     }
     console.log('inside the App constructor', this.state);
+    // this.renderSlide = this.renderSlide.bind(this);
   }
 
 
@@ -47,6 +48,7 @@ class App extends React.Component {
             ],
             galleryPhotos: imageUrls[0].photos,
             showModal: false,
+            currentSlide: null
           })
         });
     } 
@@ -63,14 +65,17 @@ class App extends React.Component {
       })
     }
 
-
+    slideImgClick = (e) => {
+      e.preventDefault();
+      console.log('inside renderSlide', e.target);
+    }
 
         //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
       //if not render null
     render() {
       console.log('inside the render', this.state);
       const gallery = this.state.galleryWindow.map((image, index) => {
-        return <img key={index} src={image + `?sig=${index}`} />
+        return <img key={index} src={image + `?sig=${index}`} onClick={() => this.renderSlide(e.target.index)}/>
       })
 
       return (
@@ -98,9 +103,10 @@ class App extends React.Component {
           </div>
         </div>
           
-          { this.state.showModal ? <ModalSlider photos={this.state.galleryPhotos} 
-                                                showModal={this.state.showModal} 
-                                                onClick={this.handleHide}   
+          { this.state.showModal ? <Modal photos={this.state.galleryPhotos} 
+                                          showModal={this.state.showModal} 
+                                          onClick={this.handleHide}
+                                          renderSlide={() => props.renderSlide(props.slide)}   
                                                 /> 
                                                 : null }
 

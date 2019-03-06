@@ -4,9 +4,17 @@ import ReactDOM from 'react-dom';
 import PhotoSlider from './PhotoSlider';
 import PropTypes from 'prop-types';
 // import './modalStyle.css';
+import Slide from './Slide.js'; 
 
 const Modal = (props) => {
   console.log('inside Modal', props)
+  // const open = props.onClick
+  const slides = props.photos.map((slide, index) => {
+    return <Slide key={index} slide={slide} show={props.showModal} />
+  })
+  
+  console.log('inside Modal', slides);
+
   return ReactDOM.createPortal(
     <div className="ui dimmer modals visible active" style={modalOverlayStyles}>
       
@@ -18,7 +26,9 @@ const Modal = (props) => {
         
         
         <div className="content">
-          <PhotoSlider />
+          
+         
+          <PhotoSlider images={slides} show={props.showModal} click={() => console.log('clicked')} onClick={() => props.renderSlide(e)}/>
         </div>
       
       </div>

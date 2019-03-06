@@ -12,6 +12,7 @@ export default class Slider extends Component {
       currentIndex: 0,
       translateVal: 0
     }
+    console.log('passed down from Modal', props)
   }
 
   // prevSlide = () => {
