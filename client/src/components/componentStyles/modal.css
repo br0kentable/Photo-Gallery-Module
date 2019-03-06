@@ -1,0 +1,157 @@
+/* const modalOverlayStyles = {
+  position: 'fixed',
+  left: '0',
+  top: '0',
+  width: '100%',
+  height: '100%',
+  zIndex: '1001',
+  background: 'rgba(0,0,0,0.9)'
+};
+
+const modalContentStyles = {
+  zIndex: '1040',
+  position: 'fixed',
+  top: '0px',
+  bottom: '0px',
+  // left: '0px',
+  // right: '0px',
+  backgroundColor: 'rgb(0,0,0,.9)',
+  // opacity: '0.5',
+}
+
+
+const modalCloseStyles = {
+  position: 'absolute',
+  top: '0',
+  right: '8px',
+  fontSize: '1.5rem',
+  color: 'black',
+  transition: 'all .25s ease-in-out',
+}
+
+const modalFooterContentStyles = {
+  fontSize: '28px',
+  fontWeight: '200',
+  margin: '20px 0 40px',
+  textAlign: 'center'
+}
+
+const modalCloseButtonHiddenStyles = {
+  padding: '20px',
+  backgroundColor: 'transparent',
+  border: '0',
+  color: 'inherit',
+  font: 'inherit',
+  margin: '0',
+  overflow: 'visible',
+  cursor: 'pointer'
+}
+
+const closeModalStyles = {
+  position: 'absolute',
+  right: '10px',
+  top: '10px',
+  cursor: 'pointer',
+  fontSize: '18px',
+  opacity: '0.5',
+  background: 'none',
+  border: 'none',
+  transition: 'opacity 0.2s ease'
+}
+
+const closeModalHoverStyles = {
+  opacity: '0.9'
+}
+
+const closeModalButtonWrapperShowStyles = {
+  fontFamily: 'icons',
+  speak: 'none',
+  fontWeight: '400',
+  textTransform: 'none',
+  lineHeight: '1',
+  color: '#6f737b',
+  fontSize: '1.2rem',
+  lineHeight: '2',
+  position: 'absolute',
+  textAlign: 'center',
+  top: '16px',
+  right: '16px',
+  width: '2rem'
+}
+
+
+// position: absolute;
+// padding: 25px;
+// right: 0;
+// top: 20px;
+
+
+
+
+
+
+
+
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 990;
+}
+
+.modal .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 995;
+  background: rgba(0,0,0,0.85);
+}
+
+.modal .modal_content {
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90%;
+  overflow: auto;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+  border-radius: 4px;
+  width: 520px; /* This just a default width */
+/* } */
+/*  
+.modal .modal_content > h2 {
+  font-size: 28px;
+  font-weight: 200;
+  margin: 20px 0 40px;
+  text-align: center;
+}
+
+.modal .modal_content .buttons_wrapper {
+  padding: 20px;
+}
+
+.modal .close_modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.5;
+  background: none;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal .close_modal:hover {
+  opacity: 0.9;
+} */

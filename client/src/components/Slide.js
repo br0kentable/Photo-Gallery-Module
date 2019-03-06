@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Slide = ({ image }) => {
+const Slide = (props) => {
   const slideStyles = {
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
@@ -8,9 +8,9 @@ const Slide = ({ image }) => {
     backgroundPosition: '50% 60%'
   }
   return (
-    <div className="slide" styles={slideStyles}>
-      
-    </div>
+    <a className="modal-open" href="#" onClick={() => console.log('!clicked openModal', props.index)} style={props.style}>
+      <img src={props.src} />
+    </a>
   )
 }
 

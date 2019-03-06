@@ -75,3 +75,21 @@ to  src="http://localhost:3002/bundle.js">
 
 Because, I wanted using componentWillMount
 
+Since we need two child components photoGallery and PhotoSlider to communicate to each other 
+what state is 
+need to declare shared state in parent component App and then pass state back down to children components
+by using props
+
+
+  createPortal takes two arguments, because you appending it to a DOM node, 
+   arg #1 - is going to be some jsx that we can render to the screen 
+    arg #2 - is the element that you want the first arg/element to be rendered to which we are
+    able to do through the document.querySelector selecting the eleemnt with the id of modal
+
+then you just import and refer to the modal component in whatever scenario or component you desire to be the trigger for the modal to be rendered
+
+In the case of this project, ? PhotoSlider ? on a click of the photoGallery 
+
+
+React bootstrap
+You can apply custom css to the modal dialog div using the "dialogClassName" prop. Example is using a custom css class with width set to 90%.

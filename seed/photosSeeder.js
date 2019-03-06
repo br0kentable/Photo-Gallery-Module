@@ -69,7 +69,7 @@ var seedPhotos = function(restaurantIds) {
 seedPhotos(restaurantIds);
 
 
-// `https://source.unsplash.com/collection/4239193/400x400/sig=5`
+// `https://source.unsplash.com/collection/4239193/400x400/?sig=5`
 
 // `https://source.unsplash.com/collection/622212/400x400/`
 

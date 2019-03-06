@@ -34,7 +34,7 @@
     width: calc(23.07692% - 2px);
 } */
 
-.photos-gallery-layout__3OGej6HZ li {
+.photos-gallery-layout {
   height: auto;
   float: left;
   box-sizing: content-box;
