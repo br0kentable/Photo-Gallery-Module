@@ -93,3 +93,7 @@ In the case of this project, ? PhotoSlider ? on a click of the photoGallery
 
 React bootstrap
 You can apply custom css to the modal dialog div using the "dialogClassName" prop. Example is using a custom css class with width set to 90%.
+
+
+        //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
+      //if not render null

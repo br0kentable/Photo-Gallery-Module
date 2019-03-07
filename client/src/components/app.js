@@ -73,9 +73,6 @@ class App extends React.Component {
       })
     }
 
-    
-        //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
-      //if not render null
     render() {
       
       const gallery = this.state.galleryWindow.map((image, index) => {
@@ -109,7 +106,7 @@ class App extends React.Component {
         </div> 
           { this.state.showModal ? <Modal photos={this.state.galleryPhotos} gallery={this.state.galleryWindow}
                                           showModal={this.state.showModal} 
-                                          onClick={this.handleHide} 
+                                          handleHide={click => this.setState({ showModal: !this.state.showModal })} 
                                           slideIndex={this.state.currentIndex}
                                            /> : null }
         </div>
@@ -236,51 +233,6 @@ const right6A = {
   color: '#fff',
   background: 'transparent'
 }
-
-const modalCloseIconStyles = {
-  position: 'absolute',
-  fontFamily: 'icons',
-  opacity: '0.5',
-  background: 'none',
-  border: 'none',
-  transition: 'opacity 0.2s ease',
-  textAlign: 'center',
-  lineHeight: '1',
-  color: '#6f737b',
-  display:'flex-start'
-}
-
-const modalOverlayStyles = {
-  position: 'fixed',
-  top: '0',
-  left: '0',
-  zIndex: '10',
-  width: '100%',
-  height: '100%',
-  background: 'rgba(21,21,21,.75)'
-}
-
-const modalBodyStyles = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  zIndex: '11',
-  padding: '0',
-  overflow: 'auto',
-  maxWidth: '100%',
-  maxHeight: '100%',
-  transform: 'translate(-50%, -50%)'
-}
-
-const modalCloseStyles = {
-  position: 'absolute',
-  top: '0',
-  right: '8px',
-  fontSize: '1.5rem',
-  color: 'black',
-  transition: 'all .25s ease-in-out',
-}
-
 
 export default App;
 

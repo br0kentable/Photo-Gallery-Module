@@ -85,7 +85,46 @@ const closeModalButtonWrapperShowStyles = {
 // right: 0;
 // top: 20px;
 
+//525 x 455
+  // const modalFooterContentStyles = {
+  //   fontSize: '28px',
+  //   fontWeight: '200',
+  //   margin: '20px 0 40px',
+  //   textAlign: 'center'
+  // }
 
+
+
+  // const closeModalStyles = {
+  //   position: 'absolute',
+  //   right: '10px',
+  //   top: '10px',
+  //   cursor: 'pointer',
+  //   fontSize: '18px',
+  //   opacity: '0.5',
+  //   background: 'none',
+  //   border: 'none',
+  //   transition: 'opacity 0.2s ease'
+  // }
+
+  // const closeModalHoverStyles = {
+  //   opacity: '0.9'
+  // }
+
+
+
+  
+  const modalContentStyles = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    zIndex: '11',
+    padding: '0',
+    overflow: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    transform: 'translate(-50%, -50%)'
+  }
 
 
 
