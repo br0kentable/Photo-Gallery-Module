@@ -6,7 +6,6 @@ import Slide from './Slide.js';
 
 
 const Modal = (props) => {
-  console.log('inside Modal: props', props);
   return ReactDOM.createPortal (
     <div className="ui dimmer modals visible active" style={modalOverlayStyles}>
         <div className="actions">
