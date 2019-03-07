@@ -1,0 +1,16 @@
+http://localhost:3002/api/restaurants/bawwPutK8j
+
+
+[
+  {
+    "photos": ["https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/","https://source.unsplash.com/collection/4239193/400x400/"],
+    "_id":"5c76ec5b3e3923b3c9ef3917",
+    "id":"bawwPutK8j",
+    "restaurantName":"Lights & Spyglass",
+    "heroImage":"https://source.unsplash.com/collection/4239193/1450x260/",
+    "galleryLeft":"https://source.unsplash.com/collection/4239193/145x145/",
+    "galleryCenter":"https://source.unsplash.com/collection/4239193/290x290/",
+    "galleryRight":"https://source.unsplash.com/collection/4239193/98x98/",
+    "__v":0
+  }
+]

@@ -8,6 +8,15 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
   "scripts": {
     "start": "nodemon server/server.js",
     "react-dev": "webpack -d --watch"
@@ -15,23 +24,31 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
     "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
     "mongoose": "^5.4.12",
     "morgan": "^1.9.1",
-    "mysql": "^2.16.0",
-    "mysql2": "^1.6.5",
     "react": "^16.8.1",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.1",
-    "sequelize": "^4.42.0"
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.1.0",
     "nodemon": "^1.18.10",
     "request": "^2.88.0",
     "style-loader": "^0.23.1",
