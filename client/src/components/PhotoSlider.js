@@ -9,36 +9,31 @@ export default class PhotoSlider extends Component {
     super(props);
     this.state = {
       images: props.totalImages,
-      index: props.slideIndex,  
+      slideIndex: props.slideIndex,  
       translateVal: 0
     }
     console.log('passed down from Modal', props)
   }
 
+  prevSlide = () => {
+    this.setState(prevState => ({
+      slideIndex: prevState.slideIndex - 1
+    }))
+  }
 
 
-
-
-  // prevSlide = () => {
-  //   this.setState(prevState => ({
-  //     currentIndex: prevState.currentIndex - 1
-  //   }))
-  // }
-
-
-  // nextSlide = () => {
-  //   if(this.state.currentIndex === this.state.images.length - 1) {
-  //     return this.setState({
-  //       currentIndex: 0,
-  //       translateVal: 0
-  //     })
-  //   }
-
-  //   this.setState(prevState => ({
-  //     currentIndex: prevState.currentIndex + 1,
-  //     translateVal: prevState.translateVal + -(this.slideWidth())
-  //   }));
-  // }
+  nextSlide = () => {
+    if(this.state.slideIndex === this.state.images.length - 1) {
+      return this.setState({
+        slideIndex: 0,
+        translateVal: 0
+      })
+    }
+    this.setState(prevState => ({
+      slideIndex: prevState.slideIndex + 1,
+      // translateVal: prevState.translateVal + -(this.slideWidth())
+    }));
+  }
 
   // slideWidth = () => {
   //   return document.querySelector('.slide').clientWidth
@@ -47,27 +42,17 @@ export default class PhotoSlider extends Component {
   render() {
     console.log('inside PhotoSlider', this.state);
     const slides = this.state.images.map((slide, index) => {
-      return <Slide key={index} img={slide} />
+      return <Slide key={index} img={slide} slideIndex={this.state.slideIndex} next={this.nextSlide} prev={this.prevSlide} />
     })
-    console.log('what should appear in modal', slides[this.state.index])
+    console.log('what should appear in modal', slides[this.state.slideIndex])
     return (
 
       <div className="image-wrapper">
-          {slides[this.state.index]}
+        <LeftArrow prevIndex={this.state.slideIndex -= 1} />
+          {slides[this.state.slideIndex]}
+        <RightArrow nextIndex={this.state.slideIndex += 1} />
       </div>
-
-        
-
     )
   }
 }
 
-const arrowStyles = {
-  height: '50px',
-  width: '50px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  cursor: 'pointer',
-  transition: 'transform ease-in .1s'
-}

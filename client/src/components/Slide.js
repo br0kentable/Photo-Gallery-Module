@@ -1,17 +1,12 @@
 import React from 'react';
 
-
 const Slide = (props) => {
   console.log('inside a Slide', props);
   return (
-    
-    
-    <img src={props.img} />
-    
+    <div>
+        <img src={props.img} />
+    </div>
   )
 }
-
-
-
 
 export default Slide;
