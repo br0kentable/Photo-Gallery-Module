@@ -9,7 +9,8 @@ export default class PhotoSlider extends Component {
     super(props);
     this.state = {
       images: props.totalImages,
-      slideIndex: props.slideIndex,  
+      slideIndex: props.slideIndex,
+      currentSlide: props.totalImages[props.slideIndex]  
     }
     console.log('passed down from Modal', props)
     this.prevSlide = this.prevSlide.bind(this);
@@ -17,6 +18,11 @@ export default class PhotoSlider extends Component {
   }
 
   prevSlide = () => {
+    if(this.state.slideIndex === 0) {
+      return this.setState({
+        slideIndex: this.state.images.length - 1
+      })
+    }
     this.setState(prevState => ({
       slideIndex: prevState.slideIndex - 1
     }))
@@ -25,21 +31,26 @@ export default class PhotoSlider extends Component {
   nextSlide = () => {
     if(this.state.slideIndex === this.state.images.length - 1) {
       return this.setState({
-        slideIndex: 0,
-        translateVal: 0
+        slideIndex: 0
       })
     }
     this.setState(prevState => ({
-      slideIndex: prevState.slideIndex + 1,
+      slideIndex: prevState.slideIndex + 1
     }));
   }
+
+  // componentDidUpdate() {
+  //   this.setState({
+  //     currentSlide: this.state.images[this.state.slideIndex]
+  //   })
+  // }
 
   render() {
     console.log('inside PhotoSlider', typeof this.state.slideIndex);
     const slideIdx = this.state.slideIndex;
 
     const slides = this.state.images.map((slide, index) => {
-      return <Slide key={index} img={slide} slideIndex={this.state.slideIndex} next={this.nextSlide} prev={this.prevSlide} />
+      return <Slide key={index} img={slide + `?sig=${index}`} slideIndex={this.state.slideIndex} next={this.nextSlide} prev={this.prevSlide} currentSlide={this.state.currentSlide} />
     })
     return (
       <div className="image-wrapper">
