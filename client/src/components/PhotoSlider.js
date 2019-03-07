@@ -4,16 +4,20 @@ import LeftArrow from './LeftArrow.js';
 import RightArrow from './RightArrow.js';
 
 
-export default class Slider extends Component {
+export default class PhotoSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [],
-      currentIndex: 0,
+      images: props.totalImages,
+      index: props.slideIndex,  
       translateVal: 0
     }
     console.log('passed down from Modal', props)
   }
+
+
+
+
 
   // prevSlide = () => {
   //   this.setState(prevState => ({
@@ -41,20 +45,19 @@ export default class Slider extends Component {
   // }
 
   render() {
+    console.log('inside PhotoSlider', this.state);
+    const slides = this.state.images.map((slide, index) => {
+      return <Slide key={index} img={slide} />
+    })
+    console.log('what should appear in modal', slides[this.state.index])
     return (
-      <div className="slider">
 
-      <div className="slide-wrapper" style={{ transform: `translateX(${this.state.translateVal}px)`, transition: 'transform ease-out 0.45s'}}>   
-        { this.state.images.map((image, idx) => (
-            <Slide key={idx} image={image} />
-          ))
-        }
+      <div className="image-wrapper">
+          {slides[this.state.index]}
       </div>
 
         
-        {/* <LeftArrow prevSlide={this.prevSlide} />
-        <RightArrow  nextSlide={this.nextSlide} /> */}
-      </div>
+
     )
   }
 }

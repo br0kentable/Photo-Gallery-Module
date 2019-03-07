@@ -3,34 +3,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PhotoSlider from './PhotoSlider';
 import PropTypes from 'prop-types';
-// import './modalStyle.css';
 import Slide from './Slide.js'; 
 
-const Modal = (props) => {
-  console.log('inside Modal', props)
-  // const open = props.onClick
-  const slides = props.photos.map((slide, index) => {
-    return <Slide key={index} slide={slide} show={props.showModal} />
-  })
-  
-  console.log('inside Modal', slides);
 
-  return ReactDOM.createPortal(
+const Modal = (props) => {
+  // console.log('inside Modal', props);
+  
+
+  return ReactDOM.createPortal (
     <div className="ui dimmer modals visible active" style={modalOverlayStyles}>
       
         <div className="actions">
-          
-          <button className="close-modal" style={modalCloseStyles}>
-            <i className="close icon" style={closeModalButtonStyles} onClick={props.handleHide}></i>  
+          <button className="close-modal" style={modalCloseStyles} onClick={props.handleHide}>
+            <i className="close icon" style={closeModalButtonStyles} ></i>  
           </button>
         
-        
         <div className="content">
-          
-         
-          <PhotoSlider images={slides} show={props.showModal} click={() => console.log('clicked')} onClick={() => props.renderSlide(e)}/>
         </div>
-      
+
+          <PhotoSlider show={props.showModal} totalImages={props.photos} gallery={props.gallery} slideIndex={props.slideIndex}/>
+    
+
       </div>
     </div>, document.querySelector('#modal')
   )
@@ -38,7 +31,7 @@ const Modal = (props) => {
 
 export default Modal;
 
-
+// 
 
 
 
@@ -113,16 +106,7 @@ const modalStyles = {
   //   textAlign: 'center'
   // }
 
-  const modalCloseButtonHiddenStyles = {
-    padding: '20px',
-    backgroundColor: 'transparent',
-    border: '0',
-    color: 'inherit',
-    font: 'inherit',
-    margin: '0',
-    overflow: 'visible',
-    cursor: 'pointer'
-  }
+
 
   // const closeModalStyles = {
   //   position: 'absolute',
@@ -157,14 +141,4 @@ const modalStyles = {
   }
 
 
-  // // position: absolute;
-  // // padding: 25px;
-  // // right: 0;
-  // // top: 20px;
 
-
-
-
-
-
-  // export default Modal;

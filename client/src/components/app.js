@@ -4,7 +4,7 @@ import PhotoGallery from './PhotoGallery.js';
 import PhotoSlider from './PhotoSlider.js';
 import Modal from './Modal.js';
 import Slide from './Slide.js';
-import Icon from './'
+
 
 
 class App extends React.Component {
@@ -14,10 +14,12 @@ class App extends React.Component {
       hero: null,
       galleryWindow: [],
       galleryPhotos: [],
-      showModal: false
+      showModal: false,
+      currentIndex: 0
     }
-    console.log('inside the App constructor', this.state);
+    // console.log('inside the App constructor', this.state);
     // this.renderSlide = this.renderSlide.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
 
@@ -25,13 +27,13 @@ class App extends React.Component {
     componentWillMount() {
       let app = this;
       //used the below console.log to see/get the param from  
-      console.log(window.location)
+      // console.log(window.location)
       let pathname = window.location.pathname.split('/');
       pathname = pathname[pathname.length - 1];
       $.get(`/api/restaurants/${pathname}`, 
         function(result) {
           let imageUrls = JSON.parse(result);
-          console.log('inside the componentWillM', imageUrls);
+          // console.log('inside the componentWillM', imageUrls);
           app.setState({
             hero: imageUrls[0].heroImage,
             galleryWindow: [
@@ -48,7 +50,7 @@ class App extends React.Component {
             ],
             galleryPhotos: imageUrls[0].photos,
             showModal: false,
-            currentSlide: null
+  
           })
         });
     } 
@@ -56,7 +58,7 @@ class App extends React.Component {
     handleShow = () => {
       this.setState({
         showModal: !this.state.showModal
-      });
+      })
     }
 
     handleHide = () => {
@@ -65,19 +67,22 @@ class App extends React.Component {
       })
     }
 
-    slideImgClick = (e) => {
-      e.preventDefault();
-      console.log('inside renderSlide', e.target);
+    handleImageClick = (index) => {
+      this.setState({
+        currentIndex: index
+      })
     }
 
+    
         //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
       //if not render null
     render() {
-      console.log('inside the render', this.state);
+      
       const gallery = this.state.galleryWindow.map((image, index) => {
-        return <img key={index} src={image + `?sig=${index}`} onClick={() => this.renderSlide(e.target.index)}/>
-      })
-
+        return <img key={index} src={image + `?sig=${index}`} onClick={() => this.handleImageClick(index)}/>
+      })  
+      const index = this.state.currentIndex;
+      // console.log('inside the App', this.state);
       return (
         <div> 
           <div className="hero-banner">
@@ -101,19 +106,17 @@ class App extends React.Component {
               <button className="see more" style={right6A} onClick={this.handleShow}> + {this.state.galleryPhotos.length - 9} more</button> 
          
           </div>
-        </div>
-          
-          { this.state.showModal ? <Modal photos={this.state.galleryPhotos} 
+        </div> 
+          { this.state.showModal ? <Modal photos={this.state.galleryPhotos} gallery={this.state.galleryWindow}
                                           showModal={this.state.showModal} 
-                                          onClick={this.handleHide}
-                                          renderSlide={() => props.renderSlide(props.slide)}   
-                                                /> 
-                                                : null }
-
+                                          onClick={this.handleHide} 
+                                          slideIndex={this.state.currentIndex}
+                                           /> : null }
         </div>
       )
     }
 }
+
 
 const heroImageStyles = {
   maxWidth: "1400xpx",
