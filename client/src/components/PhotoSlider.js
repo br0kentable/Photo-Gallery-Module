@@ -47,9 +47,9 @@ export default class PhotoSlider extends Component {
 
   render() {
     console.log('inside PhotoSlider', typeof this.state.slideIndex);
-    const slideIdx = this.state.slideIndex;
-
+    
     const slides = this.state.images.map((slide, index) => {
+    
       return <Slide key={index} img={slide + `?sig=${index}`} slideIndex={this.state.slideIndex} next={this.nextSlide} prev={this.prevSlide} currentSlide={this.state.currentSlide} />
     })
     return (

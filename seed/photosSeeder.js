@@ -1,6 +1,6 @@
 
 const PhotoGallery = require('../database/photosModel').PhotoGallery;
-const restaurantIds = require('../restaurant_ID.json');
+const restaurantIds = require('./restaurant_ID.json');
 
 /*create a PhotoGallery model instance for each id in the restaurantIds array
 
@@ -44,8 +44,8 @@ var seedPhotos = function(restaurantIds) {
       restaurantName: restaurantIds[i].name,
       heroImage: `https://source.unsplash.com/collection/4239193/1450x260/`,
       scrollerImage: `https://source.unsplash.com/collection/4239193/400x400/`,
-      galleryLeft: `https://source.unsplash.com/collection/4239193/145x145/`,
-      galleryCenter: `https://source.unsplash.com/collection/4239193/290x290/`,
+      galleryLeft: `https://source.unsplash.com/collection/4239193/147x147/`,
+      galleryCenter: `https://source.unsplash.com/collection/4239193/296x296/`,
       galleryRight: `https://source.unsplash.com/collection/4239193/98x98/`,
       photos: createPhotoCollection(generateRandomPhotoCount(1, 55), `https://source.unsplash.com/collection/4239193/400x400/`)
     }).save().then(result => {

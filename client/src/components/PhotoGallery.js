@@ -64,6 +64,8 @@ const left1 = {
   gridColumnEnd: 'col2',
   gridRowStart: 'row1',
   gridRowEnd: 'row2-left',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
 }
 
 const left2 = {
@@ -73,6 +75,8 @@ const left2 = {
   gridRowEnd: 'end',
   gridGap: '1px',
   rowGap: '1px', 
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
 }
 
 const ctr = {
