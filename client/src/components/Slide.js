@@ -3,7 +3,7 @@ import React from 'react';
 const Slide = (props) => {
   console.log('inside a Slide props:', props);
   return (
-    <div>
+    <div className="slideContainer">
         <button className="prev-img" style={prevArrowStyles}>
           <i className="angle left icon" onClick={()=> props.prev()}></i></button>
         
@@ -11,7 +11,8 @@ const Slide = (props) => {
 
         <button className="next-img" style={nextArrowStyles}>
           <i className="angle right icon" onClick={()=> props.next()}></i></button>
-   
+        <div> 
+        </div>
     </div>
   )
 }
@@ -21,7 +22,7 @@ export default Slide;
 const prevArrowStyles = {
   position: 'absolute',
   top: '50%',
-  left: '25px',
+  left: '250px',
   zIndex: '999',
   height: '20px',
   width: '20px',
@@ -34,7 +35,7 @@ const prevArrowStyles = {
 const nextArrowStyles = {
   position: 'absolute',
   top: '50%',
-  right: '25px',
+  right: '250px',
   zIndex: '999',
   height: '19px',
   width: '19px',
