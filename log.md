@@ -97,3 +97,9 @@ You can apply custom css to the modal dialog div using the "dialogClassName" pro
 
         //could conditionally render the PhotoGalleryScroller based on a click and make it toggleable active
       //if not render null
+
+
+You use your 12-digit account ID to reference your account programmatically and in other contexts. You use your canonical user ID to configure Amazon S3 access control lists (ACLs).
+AWS Account ID: 6372-0296-3838
+
+Canonical User ID: 7df2c1014f72a565290e0b3b8a36b6e2b1f7030e0e669e93bdd938c5e0f94e73
