@@ -62,16 +62,16 @@ var seedPhotos = function(restaurantIds) {
   
 
 
-
+`https://source.unsplash.com/collection/4239193/296x100/`
 
 
 
 seedPhotos(restaurantIds);
 
 
-// `https://source.unsplash.com/collection/4239193/400x400/?sig=5`
+// `https://source.unsplash.com/collection/4239193/400x400/?sig=6`
 
-// `https://source.unsplash.com/collection/622212/400x400/`
+// `https://source.unsplash.com/collection/4239193/400x400/?sig=7`
 
 
 // const 4239193s = [2455617, 622212, 3682877, 2311719, 622216, 1343727, 1275949, 4239193, 1116100, 3528803, 
