@@ -1,6 +1,6 @@
 const AWS_config = {
-  console: 'https://637202963838.signin.aws.amazon.com/console',
-  user: 'eric',
-  AWSAccessKeyId: 'AKIAJXQX6TUISLBRDZWA',
-  AWSSecretKey: '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' 
+  console: 'https://366668391001.signin.aws.amazon.com/console',
+  user: 'ericzh',
+  AWSAccessKeyId: 'AKIAJ4BUPBOXF374VWNA',
+  AWSSecretKey: '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' 
 }

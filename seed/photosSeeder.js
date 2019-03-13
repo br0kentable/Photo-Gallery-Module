@@ -62,7 +62,7 @@ var seedPhotos = function(restaurantIds) {
   
 
 
-`https://source.unsplash.com/collection/4239193/296x100/`
+// `https://source.unsplash.com/collection/4239193/296x100/`
 
 
 

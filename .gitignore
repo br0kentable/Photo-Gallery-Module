@@ -24,4 +24,4 @@ coverage
 build/
 
 
-config.js
+awsconfig.js
