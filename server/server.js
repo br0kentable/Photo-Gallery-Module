@@ -2,11 +2,12 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const { getPhotosForRestaurant } = require('../controller/utility');
+// require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
-// const PORT = 3002;
+
 
 app.use(cors());
 app.use('/restaurants/:id/photos', express.static(path.join(__dirname, '../public/dist/')));

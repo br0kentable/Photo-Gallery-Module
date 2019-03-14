@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js';
+import PhotoGallery from './App.js';
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+var galleryModule = document.getElementById('gallery');
+
+var proxy = document.getElementById('galleryProxy');
+
+if (galleryModule) {
+  ReactDOM.render(<PhotoGallery/>, galleryModule);
+} else {
+  ReactDOM.render(<PhotoGallery/>, proxy);
+}
+

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './Slide.js';
-// import LeftArrow from './LeftArrow.js';
-// import RightArrow from './RightArrow.js';
+
 
 
 export default class PhotoSlider extends Component {

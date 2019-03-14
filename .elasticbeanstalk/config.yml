@@ -1,10 +1,9 @@
 branch-defaults:
   adding-to-AWS-EB:
-    environment: brokentable
-  default:
-    environment: null
+    environment: production
+    group_suffix: null
 global:
-  application_name: brokentable
+  application_name: Photo-Gallery-Module
   branch: null
   default_ec2_keyname: null
   default_platform: Node.js

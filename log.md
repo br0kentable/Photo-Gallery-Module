@@ -103,3 +103,27 @@ You use your 12-digit account ID to reference your account programmatically and 
 AWS Account ID: 6372-0296-3838
 
 Canonical User ID: 7df2c1014f72a565290e0b3b8a36b6e2b1f7030e0e669e93bdd938c5e0f94e73
+
+Amazon DocumentDB implements the Apache 2.0 open source MongoDB 3.6 API by emulating the responses that a MongoDB client expects from a MongoDB server, allowing you to use your existing MongoDB drivers and tools with Amazon DocumentDB. Updating the application is as easy as 
+
+changing the database endpoint to the new Amazon DocumentDB cluster. Learn more about supported MongoDB APIs.
+Aws docs on mongodb compatibility
+Primary instance—Supports read and write operations, and performs all the data modifications to the cluster volume. Each Amazon DocumentDB cluster has one primary instance.
+
+Primary instance—Supports read and write operations, and performs all the data modifications to the cluster volume. Each Amazon DocumentDB cluster has one primary instance.
+Replica instance—Supports only read operations. An Amazon DocumentDB cluster can have up to 15 replicas in addition to the primary instance. Having multiple replicas enables you to distribute read workloads. In addition, by placing replicas in separate Availability Zones, you also increase your cluster availability.
+
+Cluster Endpoint
+The cluster endpoint connects to your cluster’s current primary instance. The cluster endpoint can be used for read and write operations. An Amazon DocumentDB cluster has exactly one cluster endpoint.
+
+The cluster endpoint provides failover support for read and write connections to the cluster. If your cluster’s current primary instance fails and your cluster has at least one active read replica, the cluster endpoint automatically redirects connection requests to a new primary instance.
+
+The following is an example Amazon DocumentDB cluster endpoint:
+
+sample-cluster.cluster-123456789012.us-east-1.docdb.amazonaws.com:27017
+
+
+The following is an example connection string using this cluster endpoint:
+
+mongodb://username:password@sample-cluster.cluster-123456789012.us-east-1.docdb.amazonaws.com:27017
+
